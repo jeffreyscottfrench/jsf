@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+7 media queries
+
+375
+@mixin mq375 {
+  @media only screen and (min-width: 375px) {
+    @content;
+}
+@mixin mq400 {
+  @media only screen and (min-width: 400px) {
+    @content;
+}
+400
+475
+500
+600
+736
+800

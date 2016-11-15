@@ -1,0 +1,158 @@
+// menus
+
+.menu {
+  width: 100%;
+  font-family: $font-secondary;
+  z-index: 100;
+  @media only screen and (min-width: 800px) {
+
+    & ul li {
+      border-left: $border-secondary;
+
+      &:first-child {
+        border-left: none;
+      }
+    }
+
+  }
+
+& .menu-sub {
+	  font-family: $font-terciary;
+    @media only screen and (min-width: 800px) {
+
+      & li {
+        border-left: none;
+      }
+
+    }
+  }
+
+}
+
+
+.top-menu {
+	padding: 10px 0;
+  @media only screen and (min-width: 800px) {
+  	padding: 20px 0;
+
+    & .menu-item {
+        display: inline-block;
+        @include flex(0,1,auto);
+        width: auto;
+      }
+
+  }
+}
+
+
+.bottom-menu {
+	padding: 15px 0 0;
+  margin: 0 auto 30px;
+  letter-spacing: 0.5px;
+
+  ul {
+    text-align: center;
+  }
+
+  .menu-item {
+    display: inline-block;
+    width: calc(30%);
+    @include flex(1,1,auto);
+    margin: 0 auto;
+    font-size: 13px;
+    text-align: center;
+    @media only screen and (min-width: 375px) {
+      width: calc(23%);
+    }
+    @media only screen and (min-width: 475px) {
+      width: auto;
+    }
+
+    a {
+      display: inline-block;
+      text-align: center;
+      padding: 0 12px 15px;
+      @media only screen and (min-width: 800px) {
+        display: inline;
+        padding: 0 15px;
+      }
+    }
+  }
+}
+
+.menu-special {
+	@include justify-content(space-around);
+	font-size: 16px;
+	padding-top: 10px;
+  @media only screen and (min-width: 800px) {
+  	font-size: 14px;
+  	padding-top: 15px;
+  }
+
+  & .menu-item {
+	  padding: 0 5px 10px;
+    @media only screen and (min-width: 800px) {
+      padding: 0 5px;
+    }
+  }
+}
+
+
+.menu-sub {
+  font-size: 16px;
+  margin-right: auto;
+  @include justify-content(space-between);
+	@include align-items(baseline);
+  @include order(3);
+  @media only screen and (min-width: 800px) {
+    margin: 0;
+    @include justify-content(flex-start);
+    @include order(2);
+  }
+}
+
+.menu-sub-item {
+  display: inline-block;
+  @include flex(1,1,auto);
+  padding: 10px 0 0;
+  @media only screen and (min-width: 800px) {
+    @include flex(0,1,auto);
+    padding: 0 8px;
+  }
+  & a {
+    padding: 0 20px 0 0;
+    @media only screen and (min-width: 800px) {
+      padding: 0;
+    }
+  }
+}
+
+.menu-title {
+  width: 50%;
+  padding-right: 30px;
+  font-size: 19px;
+  letter-spacing: 1.2px;
+  @media only screen and (min-width: 800px) {
+    width: auto;
+    font-size: 22px;
+  }
+}
+
+.menu-name {
+  width: 50%;
+  margin: 0 0 0 auto;
+  float: right;
+  font-size: 19px;
+  letter-spacing: 1.2px;
+  text-align: right;
+  @include order(2);
+  @media only screen and (min-width: 800px) {
+    width: auto;
+    font-size: 22px;
+    @include order(3);
+
+      &:after {
+      clear: both;
+    }
+  }
+}

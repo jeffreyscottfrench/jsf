@@ -1,0 +1,26 @@
+// styles.scss
+@charset "UTF-8";
+/* CSS Document */
+
+@import "reset";
+@import "variables";
+@import "flex";
+@import "menus"
+
+@mixin margin-centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: none; /* not factor on mobile, so don't display it */
+   height: 0;
+   clear: both;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/* Document -------------------------------------------------------------------- */

@@ -1,0 +1,9 @@
+*.log
+build/images/
+build/fonts/
+dist/
+node_modules/
+src/
+package.json
+.htaccess
+etc
