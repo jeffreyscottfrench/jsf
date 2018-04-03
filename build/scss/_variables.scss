@@ -1,11 +1,13 @@
 //variables
 
-$font-primary: 'Geneva', Arial, Helvetica, sans-serif;
-$font-secondary: 'Georgia', serif;
-$font-terciary: 'Times New Roman', Times, serif;
+$font-primary: 'Geneva', Arial, Helvetica, sans-serif; // Body
+$font-secondary: 'PerpetuaTitlingMT-Light', serif; // Menus
+$font-terciary: 'Times New Roman', Times, serif; // Menus - Alternate
 
-$color-primary: #999;
-$color-secondary: #CCC;
-$color-terciary: #666;
+$color-primary: #666;
+$color-secondary: #999;
+$color-terciary: #000;
 
 $border-secondary: 1px solid $color-secondary;
+
+$break-mid: 800px;

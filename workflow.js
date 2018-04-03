@@ -29,7 +29,7 @@ npm install del --save-dev
 
 npm install run-sequence --save-dev
 
-npm install gulp gulp-sass browser-sync gulp-connect gulp-useref gulp-uglify gulp-cssnano gulp-imagemin gulp-cache gulp-merge-media-queries gulp-sym del run-sequence --save-dev
+npm install gulp gulp-sass browser-sync gulp-connect-php gulp-useref gulp-uglify gulp-cssnano gulp-imagemin gulp-cache gulp-merge-media-queries gulp-sym del run-sequence --save-dev
 
 Build Folder Structure
 

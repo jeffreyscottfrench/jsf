@@ -4,7 +4,7 @@
   width: 100%;
   font-family: $font-secondary;
   z-index: 100;
-  @media only screen and (min-width: 800px) {
+  @media only screen and (min-width: $break-mid) {
 
     & ul li {
       border-left: $border-secondary;
@@ -17,8 +17,8 @@
   }
 
 & .menu-sub {
-	  font-family: $font-terciary;
-    @media only screen and (min-width: 800px) {
+	  font-family: $font-secondary;
+    @media only screen and (min-width: $break-mid) {
 
       & li {
         border-left: none;
@@ -31,16 +31,28 @@
 
 
 .top-menu {
-	padding: 10px 0;
-  @media only screen and (min-width: 800px) {
-  	padding: 20px 0;
+  width: calc(100% - 8px); // offset for menu-name
+	padding: 10px 0 0;
+  margin-left: 8px; // offset for menu-name
 
-    & .menu-item {
-        display: inline-block;
-        @include flex(0,1,auto);
-        width: auto;
+  .menu-item,
+  .menu-switch {
+      display: inline-block;
+      @include flex(0,1,auto);
+      width: auto;
+    }
+  .menu-sub {
+    display: none;
+  }
+  @media only screen and (min-width: $break-mid) {
+  	padding: 20px 0 0;
+
+    & .menu-switch {
+      display: none;
       }
-
+    & .menu-sub {
+      display: inline-block;
+    }
   }
 }
 
@@ -72,7 +84,7 @@
       display: inline-block;
       text-align: center;
       padding: 0 12px 15px;
-      @media only screen and (min-width: 800px) {
+      @media only screen and (min-width: $break-mid) {
         display: inline;
         padding: 0 15px;
       }
@@ -84,14 +96,14 @@
 	@include justify-content(space-around);
 	font-size: 16px;
 	padding-top: 10px;
-  @media only screen and (min-width: 800px) {
+  @media only screen and (min-width: $break-mid) {
   	font-size: 14px;
   	padding-top: 15px;
   }
 
   & .menu-item {
 	  padding: 0 5px 10px;
-    @media only screen and (min-width: 800px) {
+    @media only screen and (min-width: $break-mid) {
       padding: 0 5px;
     }
   }
@@ -104,7 +116,7 @@
   @include justify-content(space-between);
 	@include align-items(baseline);
   @include order(3);
-  @media only screen and (min-width: 800px) {
+  @media only screen and (min-width: $break-mid) {
     margin: 0;
     @include justify-content(flex-start);
     @include order(2);
@@ -115,13 +127,16 @@
   display: inline-block;
   @include flex(1,1,auto);
   padding: 10px 0 0;
-  @media only screen and (min-width: 800px) {
+  @media only screen and (min-width: $break-mid) {
     @include flex(0,1,auto);
     padding: 0 8px;
-  }
+      &:last-child {
+        padding-right: 0;
+      }
+    }
   & a {
     padding: 0 20px 0 0;
-    @media only screen and (min-width: 800px) {
+    @media only screen and (min-width: $break-mid) {
       padding: 0;
     }
   }
@@ -132,27 +147,36 @@
   padding-right: 30px;
   font-size: 19px;
   letter-spacing: 1.2px;
-  @media only screen and (min-width: 800px) {
+  @media only screen and (min-width: $break-mid) {
     width: auto;
     font-size: 22px;
   }
 }
 
 .menu-name {
-  width: 50%;
-  margin: 0 0 0 auto;
-  float: right;
-  font-size: 19px;
+  width: 80%;
+  margin: 0 auto 0 -8px;
+  float: left;
+  font-size: 18px;
   letter-spacing: 1.2px;
-  text-align: right;
-  @include order(2);
-  @media only screen and (min-width: 800px) {
+  text-align: left;
+  @include order(0);
+  @media only screen and (min-width: $break-mid) {
     width: auto;
     font-size: 22px;
-    @include order(3);
+    @include order(0);
 
       &:after {
       clear: both;
     }
+  }
+}
+
+.menu-name, //bump up underline in menu
+.menu-name ~ div,
+.menu-name ~ ul {
+  margin-bottom: -2px;
+  @media only screen and (min-width: $break-mid) {
+    margin-bottom: -3px;
   }
 }
