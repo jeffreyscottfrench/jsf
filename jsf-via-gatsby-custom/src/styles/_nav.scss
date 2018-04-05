@@ -1,0 +1,101 @@
+nav > div > a,
+aside nav > div > a,
+.aside nav > div > a {
+  flex: 1 1 auto;
+}
+
+nav > div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: baseline;
+  align-content: stretch;
+}
+
+nav a {
+  padding: $space $space2x;
+  margin: 0;
+  white-space: nowrap;
+
+  .nav__primary &,
+  .nav__secondary & {
+    text-decoration: none;
+  }
+
+  .nav__primary &,
+  &.nav__feature {
+    text-transform: uppercase;
+  }
+}
+
+.nav__primary a {
+  color: $white;
+  font-size: 22px;
+  letter-spacing: 2px;
+  background-color: $color-primary;
+
+  &:hover {
+    background-color: $color-secondary;
+  }
+}
+
+.nav__secondary a {
+  color: $color-primary;
+  text-transform: lowercase;
+  font-size: $font-size;
+
+  &:hover {
+    color: $color-secondary;
+  }
+}
+
+a.nav__feature {
+  font-family: $font-terciary--italic;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+
+  & span.larger {
+    display: block;
+    margin: 14px 0;
+    font-size: $font-size * 2;
+    font-style: normal;
+    font-weight: normal;
+  }
+}
+
+.aside nav {
+  width: 100%;
+}
+
+.aside nav > div {
+  justify-content: center;
+  text-align: center;
+}
+
+aside,
+.aside {
+  & nav {
+    width: 100%;
+
+    & a {
+      padding: $space-half $space 0;
+      text-transform: uppercase;
+
+      &.prev {
+        text-align: right;
+        border-right: 1px solid $color-primary;
+      }
+
+      &.next {
+        text-align: left;
+        border-left: 1px solid $color-primary;
+      }
+
+      &.back {
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
